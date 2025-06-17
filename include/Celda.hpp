@@ -1,16 +1,23 @@
-#pragma once
+#ifndef CELDA_HPP
+#define CELDA_HPP
 
 class Celda {
-public:
-    Celda();
-    bool esMina() const;
-    void ponerMina();
-    bool estaDescubierta() const;
-    void descubrir();
-    int getMinasCerca() const;
-    void setMinasCerca(int cantidad);
 private:
     bool mina;
-    bool descubierta;
-    int minasCerca;
+    bool abierta;
+    bool marcada;
+    int minasAlrededor;
+
+public:
+    Celda();
+    void Abrir();
+    void Marcar();
+    bool EsMina() const;
+    bool EstaAbierta() const;
+    bool EstaMarcada() const;
+    void SetMina(bool valor);
+    void SetMinasAlrededor(int cantidad);
+    int GetMinasAlrededor() const;
 };
+
+#endif // CELDA_HPP
